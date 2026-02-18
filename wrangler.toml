@@ -1,0 +1,46 @@
+# Wrangler configuration for the generalized CORS proxy worker
+# https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "cors-proxy-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables that can be set via wrangler or GitHub Actions
+[vars]
+# These are non-sensitive configuration values
+# CORS_MAX_AGE = "86400"
+# ADDITIONAL_HEADERS = "{}"
+
+# Secrets configuration (sensitive values)
+# These should be set using: wrangler secret put <KEY>
+# or via GitHub Actions workflow
+#
+# Required secrets:
+# - TARGET_ENDPOINT: The backend endpoint to proxy to
+# - ALLOWED_ORIGINS: JSON array of allowed origins
+# - ALLOWED_PATHS: JSON array of path patterns
+#
+# Optional secrets:
+# - PAYLOAD_OVERRIDE: Optional string to override response payload
+#
+# Example of setting secrets:
+# wrangler secret put TARGET_ENDPOINT
+# wrangler secret put ALLOWED_ORIGINS
+# wrangler secret put ALLOWED_PATHS
+
+# Development environment configuration
+[env.development]
+name = "cors-proxy-worker-dev"
+
+# Staging environment configuration
+[env.staging]
+name = "cors-proxy-worker-staging"
+
+# Production environment configuration
+[env.production]
+name = "cors-proxy-worker-prod"
+
+# Optional: Custom domains configuration
+# [env.production.routes]
+# pattern = "cors-proxy.yourdomain.com/*"
+# zone_name = "yourdomain.com"

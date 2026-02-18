@@ -1,0 +1,50 @@
+{
+  "name": "cors-proxy-worker",
+  "version": "1.0.0",
+  "description": "A configurable CORS proxy Cloudflare Worker that can forward requests to any target endpoint while adding necessary CORS headers",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dev": "wrangler deploy --env development",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:prod": "wrangler deploy --env production",
+    "secrets:list": "wrangler secret list",
+    "secrets:list:dev": "wrangler secret list --env development",
+    "secrets:list:staging": "wrangler secret list --env staging",
+    "secrets:list:prod": "wrangler secret list --env production",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "echo \"No linting configured\" && exit 0"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "cors",
+    "proxy",
+    "api",
+    "javascript",
+    "serverless",
+    "edge"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/cors-proxy-cloudflare-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/cors-proxy-cloudflare-worker/issues"
+  },
+  "homepage": "https://github.com/yourusername/cors-proxy-cloudflare-worker#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.32.0"
+  },
+  "files": [
+    "worker.js",
+    "wrangler.toml",
+    "README.md"
+  ]
+}
